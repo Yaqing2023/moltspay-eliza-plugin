@@ -18,6 +18,7 @@ import { validateEnvConfig, hasCDPCredentials } from "../environment.js";
 import type { ChainName } from "../types.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -57,18 +58,66 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "给钱包充值100美金" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "好的，正在生成 Coinbase Pay 充值链接。",
+        action: "MOLTSPAY_FUND",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "往钱包里加点钱" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "我来帮您充值。",
+        action: "MOLTSPAY_FUND",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "充50 USDC" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在创建 $50 USDC 的充值链接。",
+        action: "MOLTSPAY_FUND",
+      },
+    },
+  ],
 ];
 
 export const fundAction: Action = {
   name: "MOLTSPAY_FUND",
-  description: "Fund MoltsPay wallet with USDC via Coinbase Pay",
+  description: "💵 Fund MoltsPay wallet with USDC via Coinbase Pay | 充值钱包",
   similes: [
+    // English
     "fund moltspay wallet",
     "add usdc to wallet",
     "buy crypto for moltspay",
     "deposit to moltspay",
     "top up wallet",
     "fund wallet",
+    // Chinese
+    "充值",
+    "给钱包充钱",
+    "加钱",
+    "充 usdc",
+    "入金",
+    "钱包充值",
   ],
   examples,
 

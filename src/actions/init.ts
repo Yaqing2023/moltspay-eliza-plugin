@@ -21,6 +21,7 @@ import { validateEnvConfig } from "../environment.js";
 import type { ChainName } from "../types.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -60,18 +61,66 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "帮我创建一个支付钱包" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "好的，正在为您创建 MoltsPay 钱包。",
+        action: "MOLTSPAY_INIT",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "初始化钱包，每天限额100美金" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在创建钱包，日限额设为 $100。",
+        action: "MOLTSPAY_INIT",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "新建一个 Polygon 链上的钱包" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "好的，正在 Polygon 链上创建钱包。",
+        action: "MOLTSPAY_INIT",
+      },
+    },
+  ],
 ];
 
 export const initAction: Action = {
   name: "MOLTSPAY_INIT",
-  description: "Initialize a new MoltsPay wallet for payments",
+  description: "🔐 Initialize a new MoltsPay wallet for payments | 初始化 MoltsPay 支付钱包",
   similes: [
+    // English
     "initialize moltspay",
     "create payment wallet",
     "setup moltspay wallet",
     "init moltspay",
     "create moltspay account",
     "new moltspay wallet",
+    // Chinese
+    "初始化钱包",
+    "创建钱包",
+    "设置支付钱包",
+    "新建钱包",
+    "开通 moltspay",
+    "创建支付账户",
   ],
   examples,
 

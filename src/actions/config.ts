@@ -15,6 +15,7 @@ import type {
 import { walletProvider, type MoltspayWalletState } from "../providers/wallet.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -54,18 +55,66 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "把每日限额改成200美金" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "好的，正在将日限额更新为 $200。",
+        action: "MOLTSPAY_CONFIG",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "单笔最高50刀" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在将单笔限额设为 $50。",
+        action: "MOLTSPAY_CONFIG",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "修改消费限额" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "请告诉我您想设置的限额。",
+        action: "MOLTSPAY_CONFIG",
+      },
+    },
+  ],
 ];
 
 export const configAction: Action = {
   name: "MOLTSPAY_CONFIG",
-  description: "Update MoltsPay spending limits",
+  description: "⚙️ Update MoltsPay spending limits | 设置消费限额",
   similes: [
+    // English
     "update moltspay config",
     "change spending limit",
     "set max per transaction",
     "increase daily limit",
     "configure moltspay",
     "moltspay settings",
+    // Chinese
+    "修改限额",
+    "设置消费限额",
+    "改日限额",
+    "单笔限额",
+    "调整额度",
+    "钱包设置",
   ],
   examples,
 

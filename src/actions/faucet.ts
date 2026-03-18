@@ -19,6 +19,7 @@ import { walletProvider, type MoltspayWalletState } from "../providers/wallet.js
 import { requestFaucet } from "../lib/onramp.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -58,18 +59,66 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "给我领点测试币" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "好的，正在从水龙头领取测试 USDC。",
+        action: "MOLTSPAY_FAUCET",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "领测试 USDC" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在为您请求测试网 USDC。",
+        action: "MOLTSPAY_FAUCET",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "水龙头" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在从 MoltsPay 水龙头领取测试币。",
+        action: "MOLTSPAY_FAUCET",
+      },
+    },
+  ],
 ];
 
 export const faucetAction: Action = {
   name: "MOLTSPAY_FAUCET",
-  description: "Request testnet USDC from MoltsPay faucet (Base Sepolia)",
+  description: "🚰 Request testnet USDC from MoltsPay faucet (Base Sepolia) | 领取测试币",
   similes: [
+    // English
     "get test usdc",
     "request faucet",
     "testnet tokens",
     "free usdc",
     "faucet request",
     "test tokens",
+    // Chinese
+    "领测试币",
+    "水龙头",
+    "测试 usdc",
+    "领取测试网代币",
+    "免费测试币",
+    "拿测试币",
   ],
   examples,
 

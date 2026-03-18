@@ -17,6 +17,7 @@ import { MoltsPayClient } from "../lib/client.js";
 import type { ServiceInfo } from "../types.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -82,6 +83,59 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "有什么服务可以买" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "我来看看 MoltsPay 上有哪些服务。",
+        action: "MOLTSPAY_SERVICES",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "找视频生成服务" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在搜索视频相关服务...",
+        action: "MOLTSPAY_SERVICES",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "看看有什么 AI 服务" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "让我查查 MoltsPay 市场。",
+        action: "MOLTSPAY_SERVICES",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "浏览服务" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在加载 MoltsPay 服务列表...",
+        action: "MOLTSPAY_SERVICES",
+      },
+    },
+  ],
 ];
 
 function formatService(s: ServiceInfo, index: number): string {
@@ -107,8 +161,9 @@ function formatService(s: ServiceInfo, index: number): string {
 
 export const servicesAction: Action = {
   name: "MOLTSPAY_SERVICES",
-  description: "List, find, or search for services available on MoltsPay. Use when user asks about services, what they can buy, or wants to browse MoltsPay marketplace.",
+  description: "🛒 List, find, or search for services available on MoltsPay | 浏览和搜索 AI 服务",
   similes: [
+    // English
     "list services",
     "what services are available",
     "discover services",
@@ -122,6 +177,15 @@ export const servicesAction: Action = {
     "services on moltspay.com",
     "browse moltspay",
     "moltspay marketplace",
+    // Chinese
+    "有什么服务",
+    "能买什么",
+    "搜索服务",
+    "浏览服务",
+    "找服务",
+    "看看有什么",
+    "服务列表",
+    "市场",
   ],
   examples,
 

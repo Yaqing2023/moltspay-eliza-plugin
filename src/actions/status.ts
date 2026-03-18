@@ -16,6 +16,7 @@ import { walletProvider, type MoltspayWalletState } from "../providers/wallet.js
 import type { BalanceInfo } from "../types.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -55,6 +56,46 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "我钱包还有多少钱？" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "我来查一下您的 MoltsPay 余额。",
+        action: "MOLTSPAY_STATUS",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "查看余额" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在检查您的钱包状态。",
+        action: "MOLTSPAY_STATUS",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "账户里还剩多少 USDC" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "让我查一下 USDC 余额。",
+        action: "MOLTSPAY_STATUS",
+      },
+    },
+  ],
 ];
 
 function formatBalance(chain: string, bal: BalanceInfo): string {
@@ -71,14 +112,22 @@ function formatBalance(chain: string, bal: BalanceInfo): string {
 
 export const statusAction: Action = {
   name: "MOLTSPAY_STATUS",
-  description: "Show MoltsPay wallet status and balance",
+  description: "💰 Show MoltsPay wallet status and balance | 查看钱包余额和状态",
   similes: [
+    // English
     "check moltspay balance",
     "show wallet status",
     "how much usdc do I have",
     "moltspay status",
     "payment wallet balance",
     "check balance",
+    // Chinese
+    "查看余额",
+    "钱包状态",
+    "还有多少钱",
+    "账户余额",
+    "查余额",
+    "看看钱包",
   ],
   examples,
 

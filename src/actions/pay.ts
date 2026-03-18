@@ -217,7 +217,7 @@ function formatProviderOption(service: ServiceInfo, index: number): string {
 
 export const payAction: Action = {
   name: "MOLTSPAY_PAY",
-  description: "Pay for or buy a service from MoltsPay. Use when user wants to purchase, buy, or pay for a specific service, or when user selects a provider number (1, 2, etc).",
+  description: "💳 Pay for a service using x402 protocol | 支付购买 AI 服务（无需 Gas）",
   similes: [
     // English
     "pay for service",
@@ -230,6 +230,13 @@ export const payAction: Action = {
     "purchase with moltspay",
     "use moltspay to pay",
     "pay with usdc",
+    "use provider",
+    "select provider",
+    "choose provider",
+    "option 1",
+    "option 2",
+    "use 1",
+    "use 2",
     // Chinese
     "买",
     "购买",
@@ -239,13 +246,12 @@ export const payAction: Action = {
     "付款",
     "买个",
     "买一个",
-    "use provider",
-    "select provider",
-    "choose provider",
-    "option 1",
-    "option 2",
-    "use 1",
-    "use 2",
+    "用这个",
+    "选这个",
+    "选第一个",
+    "选第二个",
+    "第1个",
+    "第2个",
   ],
   examples,
 

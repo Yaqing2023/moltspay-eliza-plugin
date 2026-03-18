@@ -16,6 +16,7 @@ import { walletProvider, type MoltspayWalletState } from "../providers/wallet.js
 import type { TransactionRecord, ChainName } from "../types.js";
 
 const examples: ActionExample[][] = [
+  // English examples
   [
     {
       name: "{{user1}}",
@@ -55,6 +56,46 @@ const examples: ActionExample[][] = [
       },
     },
   ],
+  // Chinese examples
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "看看我的交易记录" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在获取您的交易历史。",
+        action: "MOLTSPAY_LIST",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "最近买了什么" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "让我查一下您的购买记录。",
+        action: "MOLTSPAY_LIST",
+      },
+    },
+  ],
+  [
+    {
+      name: "{{user1}}",
+      content: { text: "消费记录" },
+    },
+    {
+      name: "{{agent}}",
+      content: {
+        text: "正在查询您的支付记录。",
+        action: "MOLTSPAY_LIST",
+      },
+    },
+  ],
 ];
 
 function formatTransaction(tx: TransactionRecord): string {
@@ -71,14 +112,22 @@ function formatTransaction(tx: TransactionRecord): string {
 
 export const listAction: Action = {
   name: "MOLTSPAY_LIST",
-  description: "List recent MoltsPay transactions",
+  description: "📜 List recent MoltsPay transactions | 查看交易记录",
   similes: [
+    // English
     "show recent payments",
     "transaction history",
     "list moltspay transactions",
     "payment history",
     "recent purchases",
     "what did I pay for",
+    // Chinese
+    "交易记录",
+    "看看买了什么",
+    "消费记录",
+    "支付历史",
+    "最近的交易",
+    "购买记录",
   ],
   examples,
 

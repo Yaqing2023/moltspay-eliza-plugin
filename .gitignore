@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.tgz
+bun.lock
+design_doc/ACTIONS.md
+design_doc/FILE_STRUCTURE.md

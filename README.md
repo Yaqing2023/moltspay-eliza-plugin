@@ -14,27 +14,35 @@ MoltsPay x402 payment plugin for ElizaOS - enables AI agents to pay for services
 ## Installation
 
 ```bash
-# Using bun (recommended for Eliza)
-bun add @elizaos/plugin-moltspay
+# Clone or download the plugin
+git clone https://github.com/Yaqing2023/moltspay-eliza-plugin.git
 
-# Using npm
-npm install @elizaos/plugin-moltspay
+# Build the plugin
+cd moltspay-eliza-plugin
+bun install
+bun run build
+npm pack
 
-# Using pnpm
-pnpm add @elizaos/plugin-moltspay
+# Install in your ElizaOS project
+cd /path/to/your/elizaos-project
+bun add /path/to/elizaos-plugin-moltspay-0.1.0.tgz
 ```
 
 ## Quick Start
 
-### 1. Add Plugin to Agent
+### 1. Add Plugin to Character
+
+Edit `src/character.ts` and add `'@elizaos/plugin-moltspay'` to the plugins array:
 
 ```typescript
-import { moltspayPlugin } from "@elizaos/plugin-moltspay";
-
-const agent = new AgentRuntime({
-  plugins: [moltspayPlugin],
-});
+plugins: [
+  '@elizaos/plugin-sql',
+  '@elizaos/plugin-moltspay',  // Add this line
+  // ... other plugins
+],
 ```
+
+Then restart your ElizaOS server.
 
 ### 2. Initialize Wallet
 

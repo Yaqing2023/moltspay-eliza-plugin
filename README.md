@@ -56,8 +56,20 @@ Agent: [MOLTSPAY_INIT] → Creates ~/.moltspay/wallet.json
 
 ### 3. Fund Wallet
 
-Send USDC to the wallet address on Base (or Polygon):
+**Testnet (Base Sepolia):**
+```
+User: "Get testnet USDC"
+Agent: [MOLTSPAY_FAUCET] → "Sent 1 USDC to your wallet on Base Sepolia!"
+```
 
+**Mainnet (Base/Polygon):**
+Send USDC to the wallet address, or use Coinbase Pay:
+```
+User: "Fund my wallet"
+Agent: [MOLTSPAY_FUND] → Opens Coinbase Pay onramp
+```
+
+Check balance:
 ```
 User: "Check my MoltsPay status"
 Agent: [MOLTSPAY_STATUS] → "Address: 0x1234..., Balance: $100 USDC"

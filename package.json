@@ -1,5 +1,5 @@
 {
-  "name": "@elizaos/plugin-moltspay",
+  "name": "moltspay-eliza-plugin",
   "version": "0.1.0",
   "description": "MoltsPay x402 payment plugin for ElizaOS - enables AI agents to pay for services",
   "main": "dist/index.js",
@@ -11,7 +11,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "tsup",
@@ -56,7 +57,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/elizaos/eliza"
+    "url": "https://github.com/Yaqing2023/moltspay-eliza-plugin.git"
+  },
+  "homepage": "https://moltspay.com",
+  "bugs": {
+    "url": "https://github.com/Yaqing2023/moltspay-eliza-plugin/issues"
   },
   "license": "MIT",
   "author": "MoltsPay"

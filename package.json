@@ -1,6 +1,9 @@
 {
-  "name": "moltspay-eliza-plugin",
+  "name": "@moltspay/plugin-elizaos",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "MoltsPay x402 payment plugin for ElizaOS - enables AI agents to pay for services",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

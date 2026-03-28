@@ -1,4 +1,4 @@
-# moltspay-eliza-plugin
+# @moltspay/plugin-elizaos
 
 MoltsPay plugin for ElizaOS — enables AI agents to discover and pay for services using x402 protocol.
 
@@ -13,7 +13,9 @@ MoltsPay plugin for ElizaOS — enables AI agents to discover and pay for servic
 ## Installation
 
 ```bash
-bun add moltspay-eliza-plugin
+npm install @moltspay/plugin-elizaos
+# or
+bun add @moltspay/plugin-elizaos
 ```
 
 Then add to your `src/character.ts`:
@@ -21,7 +23,7 @@ Then add to your `src/character.ts`:
 ```typescript
 plugins: [
   '@elizaos/plugin-sql',
-  'moltspay-eliza-plugin',  // Add this line
+  '@moltspay/plugin-elizaos',  // Add this line
 ],
 ```
 
@@ -226,8 +228,8 @@ We welcome contributions! Whether it's:
 **Getting started:**
 
 ```bash
-git clone https://github.com/moltspay/elizaos-plugin-moltspay.git
-cd elizaos-plugin-moltspay
+git clone https://github.com/Yaqing2023/moltspay-eliza-plugin.git
+cd moltspay-eliza-plugin
 bun install
 bun run build
 ```

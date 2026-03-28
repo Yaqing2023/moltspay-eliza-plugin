@@ -12,7 +12,10 @@ MoltsPay plugin for ElizaOS — enables AI agents to discover and pay for servic
 
 ## Installation
 
+Navigate to your ElizaOS project directory first:
+
 ```bash
+cd /path/to/your/eliza-project
 npm install @moltspay/plugin-elizaos
 # or
 bun add @moltspay/plugin-elizaos
